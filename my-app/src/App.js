@@ -15,13 +15,26 @@ function App() {
     });
   }
 
+  function deleteNote(id) {
+    setNotes((preNotes) => {
+      return preNotes.filter((note, index) => {
+        return index !== id;
+      });
+    });
+  }
+
   // map through notes array
   return (
     <div>
       <Header />
       <Form addNote={addNote} />
-      {notes.map(note => (
-        <Note title={note.title} content={note.content}/>
+      {notes.map((note, index) => (
+        <Note
+          id={index}
+          deleteNote={deleteNote}
+          title={note.title}
+          content={note.content}
+        />
       ))}
       <Footer />
     </div>

@@ -1,7 +1,11 @@
-import { Paper } from "@mui/material";
+import { Button, Paper } from "@mui/material";
 import React from "react";
 
-function Note({ title, content }) {
+function Note({ title, content, id, deleteNote }) {
+  function clickHandler() {
+    deleteNote(id);
+  }
+
   return (
     <Paper
       style={{
@@ -16,6 +20,17 @@ function Note({ title, content }) {
         <h1>{title}</h1>
         <p>{content}</p>
       </div>
+      <Button onClick={clickHandler} style={{ marginLeft: "120px" }}>
+        <svg
+          class="w-6 h-6 text-gray-800 dark:text-white"
+          aria-hidden="true"
+          xmlns="http://www.w3.org/2000/svg"
+          fill="currentColor"
+          viewBox="0 0 18 20"
+        >
+          <path d="M17 4h-4V2a2 2 0 0 0-2-2H7a2 2 0 0 0-2 2v2H1a1 1 0 0 0 0 2h1v12a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V6h1a1 1 0 1 0 0-2ZM7 2h4v2H7V2Zm1 14a1 1 0 1 1-2 0V8a1 1 0 0 1 2 0v8Zm4 0a1 1 0 0 1-2 0V8a1 1 0 0 1 2 0v8Z" />
+        </svg>
+      </Button>
     </Paper>
   );
 }
