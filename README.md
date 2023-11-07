@@ -6,10 +6,9 @@
 
 A simple note-taker app made using React. Designed to be used like Google Keep.
 
+https://danhalsim-keep-notes-copy-8ccda7b0ca43.herokuapp.com/
 
-
-![screenshot](./my-project/public/screenshot.png)
-
+![screenshot](./assets/screenshot.png)
 
 ## Table of Contents
 
@@ -21,16 +20,13 @@ A simple note-taker app made using React. Designed to be used like Google Keep.
 - [Tests](#Tests)
 - [Questions](#Questions)
 
-
 ## Installation
 
 N/A
 
-
 ## Usage
 
-N/A
-
+Enter a title and body into your notes. Press the plus button to save your note.
 
 ## Credits
 
@@ -38,31 +34,22 @@ N/A
   - https://tailwindcss.com/
 - Flowbite: Tailwind components
   - https://flowbite.com/
-- UCI BCS for template code
-  - ErrorPage.jsx
-  - App.jsx
-  - main.jsx
-- Xpert Learning Assistant for help with:
-  - page location checker (Header.jsx lines 8-10)
-  - form submission logic (ContactPage.jsx lines 4-17)
-
+- Material UI
+  - https://mui.com/material-ui/
 
 ## License
 
 This project uses the MIT License.
 
-https://opensource.org/licenses/MIT 
-
+https://opensource.org/licenses/MIT
 
 ## Contributions
 
 N/A
 
-
 ## Tests
 
 N/A
-
 
 ## Questions
 
