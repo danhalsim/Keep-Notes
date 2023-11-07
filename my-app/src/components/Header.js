@@ -4,8 +4,8 @@ import Paper from '@mui/material/Paper';
 
 function Header() {
   return (
-    <Paper elevation={3}>
-      <h1>Header</h1>
+    <Paper square elevation={3}>
+      <h1 className=''>React App</h1>
     </Paper>
   )
 }
