@@ -1,19 +1,28 @@
 import { Fab, Paper, TextField } from "@mui/material";
 import React, { useState } from "react";
 
-function Form() {
+function Form({ addNote }) {
   const [note, setNote] = useState({
     title: "",
     content: "",
   });
+
+  function clickHandler() {
+    addNote(note);
+    setNote({
+      title: "",
+      content: "",
+    });
+  }
+
   function changeHandler(event) {
-    const {name, value} = event.target;
+    const { name, value } = event.target;
     setNote((preValues) => {
-      return{
+      return {
         ...preValues,
         [name]: value,
-      }
-    })
+      };
+    });
   }
   return (
     <Paper style={{ margin: "10px 10%", padding: "25px 50px" }}>
@@ -36,7 +45,7 @@ function Form() {
           multiline
           rows={4}
         />
-        <Fab style={{ marginTop: "20px" }}>
+        <Fab onClick={clickHandler} style={{ marginTop: "20px" }}>
           <svg
             class="w-6 h-6 text-gray-800 dark:text-white"
             aria-hidden="true"
