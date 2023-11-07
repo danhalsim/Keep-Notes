@@ -28,14 +28,19 @@ function App() {
     <div>
       <Header />
       <Form addNote={addNote} />
-      {notes.map((note, index) => (
-        <Note
-          id={index}
-          deleteNote={deleteNote}
-          title={note.title}
-          content={note.content}
-        />
-      ))}
+      <div
+        class="md:grid-cols-2"
+        style={{ margin: "10px 15%", padding: "25px 50px" }}
+      >
+        {notes.map((note, index) => (
+          <Note
+            id={index}
+            deleteNote={deleteNote}
+            title={note.title}
+            content={note.content}
+          />
+        ))}
+      </div>
       <Footer />
     </div>
   );

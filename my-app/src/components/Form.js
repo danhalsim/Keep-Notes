@@ -8,11 +8,13 @@ function Form({ addNote }) {
   });
 
   function clickHandler() {
-    addNote(note);
-    setNote({
-      title: "",
-      content: "",
-    });
+    if (note) {
+      addNote(note);
+      setNote({
+        title: "",
+        content: "",
+      });
+    }
   }
 
   // spread operator for previous values
@@ -26,9 +28,10 @@ function Form({ addNote }) {
     });
   }
   return (
-    <Paper style={{ margin: "10px 10%", padding: "25px 50px" }}>
+    <Paper elevation={3} style={{ margin: "10px 20%", padding: "25px 50px" }}>
       <form>
         <TextField
+          variant="standard"
           onChange={changeHandler}
           name="title"
           value={note.title}
@@ -37,18 +40,24 @@ function Form({ addNote }) {
           autoComplete="off"
         />
         <TextField
+          variant="standard"
           onChange={changeHandler}
           name="content"
           value={note.content}
-          label="Content"
+          label="Take a note..."
           fullWidth
           autoComplete="off"
           multiline
           rows={4}
         />
-        <Fab onClick={clickHandler} style={{ marginTop: "20px" }}>
+
+        {/* add note button */}
+        <Fab
+          onClick={clickHandler}
+          style={{ marginTop: "20px", color: "white" }}
+        >
           <svg
-            class="w-6 h-6 text-gray-800 dark:text-white"
+            class="w-[20px] h-[20px] text-gray-800 dark:text-white"
             aria-hidden="true"
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -58,7 +67,7 @@ function Form({ addNote }) {
               stroke="currentColor"
               stroke-linecap="round"
               stroke-linejoin="round"
-              stroke-width="2"
+              stroke-width="1"
               d="M9 1v16M1 9h16"
             />
           </svg>
