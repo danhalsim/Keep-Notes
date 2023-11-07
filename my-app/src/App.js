@@ -15,13 +15,14 @@ function App() {
     });
   }
 
+  // map through notes array
   return (
     <div>
       <Header />
       <Form addNote={addNote} />
-      <Note />
-      <Note />
-      <Note />
+      {notes.map(note => (
+        <Note title={note.title} content={note.content}/>
+      ))}
       <Footer />
     </div>
   );

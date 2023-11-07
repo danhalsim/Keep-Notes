@@ -15,6 +15,7 @@ function Form({ addNote }) {
     });
   }
 
+  // spread operator for previous values
   function changeHandler(event) {
     const { name, value } = event.target;
     setNote((preValues) => {
