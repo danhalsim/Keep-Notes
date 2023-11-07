@@ -53,6 +53,7 @@ function Form({ addNote }) {
 
         {/* add note button */}
         <Fab
+          hidden
           onClick={clickHandler}
           style={{ marginTop: "20px", color: "white" }}
         >
